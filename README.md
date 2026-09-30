@@ -32,8 +32,3 @@ A modular, console-based systems application developed in pure **C** to handle a
 * **Storage:** File I/O Persistence
 
 ---
-* Make (optional)
-
-### Compilation (GCC)
-```bash
-gcc -Wall -Wextra -std=c99 main.c -o sports_manager
