@@ -1,16 +1,39 @@
-# Sports Club Event Manager (C)
+# Sports Club & Event Management System (C)
 
-A console program that manages athletes (“sportsmen”) and their competition events using plain-text files for storage. It loads initial data from SportsmanData.txt and EventData.txt, lets you add athletes, add events, list a player’s events, count how many players participated in a given event/year, detect duplicate events, show the “best” club by number of events, print a club’s events sorted, rename a club across all athletes, and delete events.
-Under the hood it demonstrates dynamic memory management, structs with nested dynamic arrays, robust user input validation, and file I/O in C.
+A modular, console-based systems application developed in pure **C** to handle athlete profiles, club memberships, and tournament event tracking. The project emphasizes low-level data structure design, manual dynamic memory management, and persistent file storage.
 
-## Features
-- **Load & save** data from `SportsmanData.txt` and `EventData.txt`
-- **Add** a sportsman (ID, first/last name, club, gender)
-- **Add** an event to a sportsman (title, location, year)
-- **List** all events for a sportsman (by last name)
-- **Count/print** all sportsmen who played a given event in a given year
-- **Find duplicates**: check if a sportsman shares events with others
-- **Best club**: club with the most total event participations
-- **Print club events** sorted (title, location, year)
-- **Bulk edit**: rename a club across all sportsmen
-- **Delete** an event (by name+year) from **all** sportsmen
+---
+
+## 🌟 Key Technical Highlights
+
+* **Low-Level Memory Management & Dynamic Allocation:**
+  * Uses manual allocation (`malloc`, `realloc`, `free`) to manage data on the heap without static buffer limitations.
+  * Implements nested dynamic structures (athletes with dynamically sized arrays of attended events) ensuring zero memory leaks.
+
+* **Custom Data Structures & Algorithms:**
+  * Custom sorting algorithms for chronological and alphabetical event ordering.
+  * Fast lookup and cross-referencing routines for duplicate detection and player history.
+  * System-wide aggregations (e.g., determining top-performing clubs by tournament participation volume).
+
+* **File I/O & Serialization:**
+  * Parses and streams structured plain-text database records (`SportsmanData.txt`, `EventData.txt`).
+  * Handles bidirectional serialization (loading on startup, flushing updates on demand).
+
+* **Defensive CLI Architecture:**
+  * Strict input buffer sanitation and type validation to prevent buffer overflows or unintended runtime crashes during terminal interactions.
+
+---
+
+## 🛠️ Architecture & Concepts
+
+* **Language:** C (Standard C99 / C11)
+* **Key Paradigms:** Procedural Programming, Systems Programming
+* **Memory Management:** Heap Allocation, Pointer Arithmetic, Nested Structs
+* **Storage:** File I/O Persistence
+
+---
+* Make (optional)
+
+### Compilation (GCC)
+```bash
+gcc -Wall -Wextra -std=c99 main.c -o sports_manager
